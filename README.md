@@ -44,5 +44,9 @@ Each page makes API calls written in the `api` directory.
 ## Installation and Setup
 
 1. Clone the repository.
-   ```bash
-   git clone https://github.com/khacanh123/manage-product.git
+2. Run `npm install` to install dependencies.
+3. Run `npm start` to start the development server.
+
+## Contact
+
+For any questions or issues, please reach out to the project maintainer.
