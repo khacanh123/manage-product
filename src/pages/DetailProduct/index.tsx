@@ -18,7 +18,7 @@ const DetailProduct = () => {
   const dispatch = useDispatch();
   const params = useParams();
   useEffect(() => {
-    dispatch(getProductByID(params.id || ""));
+    // dispatch(getProductByID(params.id || ""));
   }, [params.id]);
   return (
     <div>

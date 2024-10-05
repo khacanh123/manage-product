@@ -47,18 +47,18 @@ const CreateProductPage = () => {
     else {
       if (params.id !== undefined) {
         // update product
-        dispatch(updateProductAPI(product));
+        // dispatch(updateProductAPI(product));
         navigate("/");
       } else {
         //create product
-        dispatch(createProductAPI(product));
+        // dispatch(createProductAPI(product));
         navigate("/");
       }
     }
   };
   // co su thay doi cua params id
   useEffect(() => {
-    dispatch(getProductByID(params.id || ""));
+    // dispatch(getProductByID(params.id || ""));
   }, [params.id]);
   return (
     <div className="max-w-[1280px] mx-auto px-2">

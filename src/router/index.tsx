@@ -4,25 +4,27 @@ import { PublicRouter } from './public';
 import { Suspense } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { jwtDecode } from 'jwt-decode';
-import { setInfoUser } from '../store/slice/auth';
+import AdminLayout from '../layout';
 const Router = () => {
-    const data = useSelector((state: any) => state.auth.dataUser)
+    // const data = useSelector((state: any) => state.auth.dataUser)
     const dispatch = useDispatch()
     const token = localStorage.getItem('token');
-    if(token || data?.token) {
+    if(token) {
         const decoded = jwtDecode<any>(token || '');
-        dispatch(setInfoUser(decoded))
+        // dispatch(setInfoUser(decoded))
     }
     return(
         <Routes>
             {
-                token || data?.token ? PrivateRouter.map((value: any, index: number) => {
+                token ? PrivateRouter.map((value: any, index: number) => {
                     const Container = value.element;
                     return(
                         <Route path={value.path} key={index} element={
-                            <Suspense fallback='Loading'>
+                            <AdminLayout>
+                                <Suspense fallback='Loading'>
                                 <Container />
                             </Suspense>
+                                </AdminLayout>
                         } />
                     )
                 }) : 
@@ -31,8 +33,8 @@ const Router = () => {
                     return(
                         <Route path={value.path} key={index} element={
                             <Suspense fallback='Loading'>
-                                <Container />
-                            </Suspense>
+                            <Container />
+                        </Suspense>
                         } />
                     )
                 })

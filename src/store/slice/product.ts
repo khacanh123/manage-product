@@ -32,18 +32,7 @@ export const productSlice = createSlice({
     builder.addCase(loginRequest.fulfilled, (state, action) => {
       productSlice.caseReducers.setListProduct(state, action);
     });
-    builder.addCase(getListProduct.fulfilled, (state, action) => {
-        productSlice.caseReducers.setDetailProduct(state, action);
-      });
-      builder.addCase(createProductAPI.fulfilled, (state, action) => {
-        productSlice.caseReducers.createProduct(state, action);
-      });
-      builder.addCase(updateProductAPI.fulfilled, (state, action) => {
-        productSlice.caseReducers.updateProduct(state, action);
-      });
-      builder.addCase(deleteProductAPI.fulfilled, (state, action) => {
-        productSlice.caseReducers.updateProduct(state, action);
-      });
+    
   },
 });
 
