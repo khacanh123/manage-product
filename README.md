@@ -1,46 +1,52 @@
-# Getting Started with Create React App
+# Project Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is built using modern web technologies for creating a responsive frontend interface. It includes functionality for user login, product listing, product creation, and viewing product details, with full state management using Redux Toolkit and API integration.
 
-## Available Scripts
+## Technologies Used
 
-In the project directory, you can run:
+- **Frontend:** ReactJS, TypeScript, Redux Toolkit, TailwindCSS, React Toastify, Axios
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The project is organized into the following directories:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **api:** Contains API functions using `createAsyncThunk` from Redux Toolkit.
+- **pages:** Contains the user interface pages (Login, ListProduct, CreateProduct, DetailProduct).
+- **router:** Handles routing and navigation.
+- **store:** Declares the store and slices for managing application state.
+- **utils:** Custom utility functions, including notifications using React Toastify.
 
-### `npm test`
+## User Interface Design and API Integration
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The user interface consists of four main pages:
 
-### `npm run build`
+1. **Login**
+2. **ListProduct**
+3. **CreateProduct**
+4. **DetailProduct**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Each page makes API calls written in the `api` directory.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Functionality Testing
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Test Cases
 
-### `npm run eject`
+| Test Case | Status |
+| --- | --- |
+| **Login Page:** No input in the form > Click login (Expected: Show error notification) | OK |
+| **Login Page:** Incorrect credentials (Expected: Show error notification) | OK |
+| **Login Page:** Correct credentials (Expected: Show success notification and redirect to product list) | OK |
+| **Product List Page:** Only admin users see the add new product button and product item actions (edit, delete) | OK |
+| **Product List Page:** Delete action (Expected: Show confirmation popup before deletion) | OK |
+| **Create/Edit Product Page:** No product name entered (Expected: Show error notification) | OK |
+| **Create/Edit Product Page:** Save button action should update the product list upon successful submission | OK |
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Installation and Setup
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repository.
+2. Run `npm install` to install dependencies.
+3. Run `npm start` to start the development server.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Contact
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+For any questions or issues, please reach out to the project maintainer.
