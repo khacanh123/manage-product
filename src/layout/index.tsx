@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 const AdminLayout = ({children}: any) => {
+    const navigate = useNavigate()
     return (
         <div className="flex">
   {/* Sidebar */}
@@ -6,8 +9,8 @@ const AdminLayout = ({children}: any) => {
     {/* Nội dung sidebar */}
     <ul className="text-white">
       <li className="p-4 hover:bg-gray-700">Dashboard</li>
-      <li className="p-4 hover:bg-gray-700">Users</li>
-      <li className="p-4 hover:bg-gray-700">Settings</li>
+      <li className="p-4 hover:bg-gray-700" onClick={()=>navigate('/')}>Users</li>
+      <li className="p-4 hover:bg-gray-700" onClick={()=>navigate('/become-mechanic')}>Become Mechanic</li>
     </ul>
   </div>
   {/* Content */}

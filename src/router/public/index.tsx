@@ -7,6 +7,7 @@ type RouteType = {
     layout?: FunctionComponent;
   };
 const SignInContainer = lazy(() => import('../../pages/Login'));
+const listUser = lazy(() => import('../../pages/ListProduct'));
 export const PublicRouter: RouteType[] = [
   {
     path: '/signin',
@@ -15,5 +16,9 @@ export const PublicRouter: RouteType[] = [
   {
     path: '/',
     element: SignInContainer,
+  },
+  {
+    path: '/private',
+    element: listUser,
   },
 ];

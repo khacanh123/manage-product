@@ -7,12 +7,17 @@ type RouteType = {
     layout?: FunctionComponent;
   };
 const ListProductContainer = lazy(() => import('../../pages/ListProduct'));
+const BecomeMechanicContainer = lazy(() => import('../../pages/ListBecomeMechanic'));
 const DetailProductContainer = lazy(() => import('../../pages/DetailProduct'));
 const CreateProductContainer = lazy(() => import('../../pages/CreateProduct'));
 export const PrivateRouter: RouteType[] = [
   {
     path: '/',
     element: ListProductContainer,
+  },
+  {
+    path: '/become-mechanic',
+    element: BecomeMechanicContainer,
   },
   {
     path: '/detail/:id',
